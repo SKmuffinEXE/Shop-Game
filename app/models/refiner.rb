@@ -1,0 +1,2 @@
+class Refiner < ApplicationRecord
+end
