@@ -1,2 +1,0 @@
-class BaseItem < ApplicationRecord
-end

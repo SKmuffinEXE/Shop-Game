@@ -10,33 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_055600) do
+ActiveRecord::Schema.define(version: 2022_01_26_193546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "base_items", force: :cascade do |t|
-    t.string "name"
-    t.integer "basePrice"
-    t.integer "quality"
-    t.integer "categoryid"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "base_itemid"
-    t.integer "main_itemid"
+    t.integer "itemid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "main_items", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "basePrice"
     t.integer "quality"
     t.integer "categoryid"
+    t.integer "recipeid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_055600) do
     t.boolean "use"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "recipeid"
   end
 
   create_table "user_usernames", force: :cascade do |t|
