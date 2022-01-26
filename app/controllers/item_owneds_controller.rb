@@ -1,0 +1,2 @@
+class ItemOwnedsController < ApplicationController
+end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :item_owneds
   resources :items
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

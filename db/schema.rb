@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_193546) do
+ActiveRecord::Schema.define(version: 2022_01_26_213130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2022_01_26_193546) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "itemid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_owneds", force: :cascade do |t|
+    t.integer "userid"
+    t.integer "itemid"
+    t.integer "quality"
+    t.boolean "store"
+    t.boolean "storage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_193546) do
     t.integer "recipeid"
   end
 
-  create_table "user_usernames", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "alias"
     t.string "storeName"
     t.string "password_digest"
@@ -61,8 +71,6 @@ ActiveRecord::Schema.define(version: 2022_01_26_193546) do
     t.integer "currentGold"
     t.integer "storage"
     t.integer "storeSpace"
-    t.integer "storageitems"
-    t.integer "storeitems"
     t.string "emblem"
     t.integer "reputation"
     t.datetime "created_at", precision: 6, null: false
