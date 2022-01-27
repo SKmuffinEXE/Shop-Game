@@ -1,4 +1,4 @@
 class Recipe < ApplicationRecord
     belongs_to :item
-    has_many :items
+    has_many :recipe_steps
 end

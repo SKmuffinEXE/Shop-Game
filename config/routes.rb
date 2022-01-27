@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :recipe_steps
+  resources :storages
   resources :item_owneds
   resources :items
   resources :recipes

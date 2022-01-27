@@ -12,15 +12,23 @@
 #name, basePrice, quality, categoryid, recipeid
 #potion and potion ingredients
 #categories: weapons, potions, materials, food, sweets, bombs, carpentry, leather,
-# Item.create(name: "Iron Sword", basePrice: 100, categoryid 1)
-# Item.create(name: "Iron ore", basePrice: 20, categoryid: 3)
-# Item.create(name: "Coal", basePrice: 5, categoryid: 3)
-# Item.create(name: "Dagger", basePrice: 15, categoryid: 1)
+# Item.create(name: "Iron Sword", basePrice: 100, category_id 1)
+# Item.create(name: "Iron ore", basePrice: 20, category_id: 3)
+# Item.create(name: "Coal", basePrice: 5, category_id: 3)
+# Item.create(name: "Dagger", basePrice: 15, category_id: 1)
+# Item.create(name: "Slime", basePrice: 2, category_id: 3)
+# Item.create(name: "Pinecone", basePrice: 1, category_id: 3)
+# Item.create(name: "Leather", basePrice: 5, category_id: 3)
 
 
 #refiners
 #name, categoryid, itemsid, open, ordersProgress, ordersDone, use
 
 #recipes
-Recipe.create(name: "Dagger Recipe", result: 4, itemid: 2, itemid2: 2, itemid3: 3)
+# DaggerRec = Recipe.create(name: "Dagger Recipe", item_id: 4, category_id: 1)
+
+#recipe steps
+# RecipeStep.create(recipe_id: DaggerRec.id, item_id: 2)
+# RecipeStep.create(recipe_id: DaggerRec.id, item_id: 4)
+
 
